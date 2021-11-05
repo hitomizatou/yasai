@@ -1,0 +1,1117 @@
+@charset "UTF-8";
+
+body {
+  font-family: 'Noto Sans JP', "游明朝", Yumincho, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, Verdana, sans-serif;
+}
+
+/* 各セクションの見出し共通設定 */
+
+h2 {
+  font-size: 43px;
+  font-weight: normal;
+}
+
+@media (max-width: 767px) {
+  h2 {
+    font-size: 36px;
+    font-weight: normal;
+  }
+}
+
+/* 各セクションヘッダー共通の五線譜背景 */
+
+.header-bg {
+  background-image: url(../img/gosenhu.png);
+}
+
+/* コンテンツ幅の指定 */
+
+.content-box {
+  max-width: 1280px;
+  /* background-color: cornflowerblue; */
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+@media (max-width: 767px) {
+  .content-box {
+    padding: 0 20px;
+
+  }
+}
+
+/*  */
+
+@media (min-width: 768px) {
+  body {
+    min-width: 1100px;
+  }
+}
+
+/* header
+---------------------------------------------------------------------------- */
+
+
+/* .header-box {
+  /* background-color: aquamarine; */
+/* width: 100%; 
+  height: 100vh;
+  background-image: url(img/top-image.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}  */
+
+/* slick  sliderの記述 
+----------------------------------------------------------------------------------------*/
+.slider {
+  position:relative;
+z-index: 1;
+/*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+/*　背景画像設定　*/
+
+.slider-item01 {
+  background:url(../img/top-image.jpg);
+}
+
+.slider-item02 {
+  background:url(../img/top-image2.jpg);
+}
+
+.slider-item03 {
+  background:url(../img/top-image3.jpg);
+}
+
+.slider-item {
+  width: 100%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+  height:100vh;/*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+  background-repeat: no-repeat;/*背景画像をリピートしない*/
+  background-position: center;/*背景画像の位置を中央に*/
+  background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
+}
+
+/*矢印の設定*/
+
+.slick-prev, 
+.slick-next {
+  position: absolute;
+z-index: 3;
+  top: 42%;
+  cursor: pointer;/*マウスカーソルを指マークに*/
+  outline: none;/*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #fff;/*矢印の色*/
+  border-right: 2px solid #fff;/*矢印の色*/
+  height: 25px;
+  width: 25px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+  left:2.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+  right:2.5%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+position: relative;
+z-index: 3;
+  text-align:center;
+margin:-50px 0 0 0;/*ドットの位置*/
+}
+
+.slick-dots li {
+  display:inline-block;
+margin:0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width:8px;/*ドットボタンのサイズ*/
+  height:8px;/*ドットボタンのサイズ*/
+  display:block;
+  border-radius:50%;
+  background:#fff;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+  background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+/* slick設定　ここまで
+-------------------------------------------------------------------------- */
+
+
+header {
+  position: relative;
+}
+
+.header-logo{
+  width: 50px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 1;
+}
+
+/* 五線譜の位置調整 */
+.header-gosenhu img {
+  /* background-color: brown; */
+  width: 100%;
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+}
+
+
+/* 白抜きロゴの位置調整 */
+header h1 {
+  width: 200px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  z-index: 2;
+  /*左右真ん中よせのための微調整。これをしないと、imgの左端の部分がちょうど50％のところにきてしまう */
+  transform: translateX(-50%);
+}
+
+@media (max-width:767px) {
+  header h1 {
+    width: 100px;
+    position: absolute;
+    top: 170px;
+    left: 50%;
+  }
+
+  nav img {
+    width: 30px;
+  }
+
+  .slider-item,
+  .slider {
+    height: 350px;
+  }
+  
+}
+
+/* concept
+----------------------------------------------------------------------- */
+
+.concept-wrapper {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/top-image_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.concept-textbox {
+  /* background-color: coral; */
+  padding-top: 185px;
+  width: 750px;
+  height: 600px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.concept-textbox p {
+  writing-mode: vertical-rl;
+  line-height: 2;
+  font-family: 'Noto Serif JP', serif;
+}
+
+.concept-title {
+  font-size: 1.5rem;
+}
+
+/* スマホ用レイアウト準備。PCでは非表示。 */
+.concept-text-sp1, .concept-text-sp2 {
+  display: none;
+}
+
+/* pc用のテキストは非表示 */
+@media(max-width:767px) {
+  .concept-text-pc {
+    display: none;
+  }
+
+  /* スマホ用のテキストレイアウト表示 */
+  .concept-text-sp1,
+  .concept-text-sp2  {
+    display: block;
+    height: 250px;
+    margin: 0 auto;
+    /* background-color: teal; */
+  }
+ 
+  /* PCで横並びしていたflexを解除 */
+  .concept-textbox {
+    display: block;
+    padding: 0;
+    width: 100%;
+  }
+
+  /* PCでは縦書きしていたタイトルを横書きに */
+  .concept-textbox p.concept-title {
+    font-size: 20px;
+    writing-mode: horizontal-tb;
+    /* background-color: tomato; */
+    text-align: center;
+    padding: 25px 0 15px;
+  }
+
+  /* 下線のスタイリング */
+  .concept-textbox span {
+    display: block;
+    width: 100px;
+    height: 50px;
+    /* background-color: violet; */
+    margin: 0 auto 10px;
+    border-top: solid 0.3px black;
+  }
+
+}
+
+/* 下記３つは音符のあしらい */
+.concept-hachibuonpu {
+  width: 1.5%;
+  position: absolute;
+  top: 55%;
+  left: 200px;
+  animation: rotate 2.5s 1s infinite both;
+}
+
+/* animation: rotate 2.5s 1s infinite both; */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(15deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+}
+
+.toonkigou {
+  width: 2%;
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  animation: twice 5s 4s infinite both;
+}
+
+@keyframes twice {
+  0% {
+    transform: rotate(0) translate(0, 0);
+  }
+  4% {
+    transform: rotate(0) translate(0, 0);
+  }
+  4.15% {
+    transform: rotate(5deg) translate(10px, -20px);
+  }
+  8% {
+    transform: rotate(5deg) translate(10px, -20px);
+  }
+  8.15% {
+    transform: rotate(0) translate(0, 0);
+  }
+  12% {
+    transform: rotate(0) translate(0, 0);
+  }
+  12.15% {
+    transform: rotate(5deg) translate(10px, -20px);
+  }
+  16% {
+    transform: rotate(5deg) translate(10px, -20px);
+  }
+  16.15% {
+    transform: rotate(0) translate(0, 0);
+  }
+}
+
+.moyamoya {
+  width: 10%;
+  position: absolute;
+  bottom: -50px;
+  left: 300px;
+  animation: fuwa 5s 2s infinite both;
+}
+/* animation: fuwa 5s 2s infinite both; */
+@keyframes fuwa {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2px, -10px);
+  }
+  50% {
+    transform: translate(-1px, 0);
+  }
+  75% {
+    transform: translate(1px, -7px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@media(max-width:767px) {
+  .concept-hachibuonpu ,
+  .moyamoya {
+    display: none;
+  }
+
+ .toonkigou {
+  width: 7%;
+  position: absolute;
+  bottom: -480px;
+  right: 50px;
+  z-index: 10;
+ }
+
+  }
+/* about
+----------------------------------------------------------------------- */
+
+.about-wrapper {
+  /* background-color: blueviolet; */
+}
+
+/* aboutブロックの見出し位置の調整 */
+.about-wrapper h2 {
+  text-align: right;
+  padding-right: 21%;
+  /* background-color: darkseagreen; */
+}
+
+/* スマホでは真ん中にレイアウト */
+@media (max-width:767px){
+  .about-wrapper h2 {
+    /* padding-left: 0; */
+    padding-right: 0;
+    text-align: center;
+    /* background-color: turquoise; */
+  }
+}
+
+
+.about-image-box {
+  /* background-color: coral; */
+  position: relative;
+}
+
+.about-image {
+  width: 490px;
+}
+
+/* sp用のための画像。pcでは非表示 */
+.about-image-sp {
+  display: none;
+}
+
+/*イメージ写真後ろの山吹色あしらい */
+.about-image-bg {
+  width: 60%;
+  position: absolute;
+  top: 150px;
+  left: 255px;
+  z-index: -1;
+}
+
+/* flex-container共通指定 */
+.flex-container {
+  padding-top: 45px;
+  display: flex;
+  /* background-color: rgb(20, 137, 127); */
+}
+
+/*  yasaisetとqa部分をrow-reverseに */
+section:nth-of-type(odd) .flex-container{
+  flex-direction: row-reverse;
+  padding-top: 135px;
+  /* background-color: rgb(221, 239, 182); */
+  justify-content: space-between;
+}
+
+
+@media (max-width:767px) {
+.flex-container{
+  /* section:nth-of-type(odd) */
+  display: block;
+    /* flex-direction: column !important; */
+    padding-top: 45px;
+  }
+
+  /*  yasaisetとqa部分をpaddingを調整 */
+  section:nth-of-type(odd) .flex-container{
+    padding-top: 35px;
+    /* background-color: rgb(221, 239, 182); */
+  }
+
+  /* スマホ用のイメージ写真表示 */
+ .about-image-sp {
+   display: block;
+   width: 100%;
+ }
+
+ /* PC用のイメージ写真非表示 */
+ .about-image {
+   display: none;
+ }
+
+ /* スマホでは、イメージ写真のうしろのあしらいは非表示に */
+  .about-image-bg, .yasaiset-image-bg, .voice-image-bg, .voice-image-dotbg, .qa-image-bg {
+    display: none;
+  }
+}
+
+
+/* aboutの説明文ブロックのレイアウト */
+.about-flex-text {
+  /* background-color: crimson; */
+  width: 560px;
+  margin-left: 160px;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width:767px) {
+  .about-flex-text {
+    /* background-color: violet; */
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+}
+
+/* 各ブロック　midashi共通指定 */
+.midashi {
+  font-size: 30px;
+  /* background-color: darkgrey; */
+  padding-bottom: 100px;
+}
+
+@media (max-width:767px) {
+  .midashi {
+    font-size: 25px;
+    padding-bottom: 50px;
+  }
+}
+
+/* 各ブロックtext共通指定 */
+.text {
+  font-size: 16px;
+  /* background-color: darkkhaki; */
+  padding-bottom: 130px;
+}
+
+@media (max-width:767px) {
+  .text {
+  padding-bottom: 50px;
+  }
+}
+
+/* 各ブロックリンクボタン共通指定 */
+.link-button {
+  border: 2px solid #d4c45e;
+  display: block;
+  font-size: 16px;
+  border-radius: 50px;
+  width: 280px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: #000;
+  margin-left: auto;
+  /* リンクボタンを基準に下の余白130px */
+  margin-bottom: 130px;
+}
+
+/* スマホでは、リンクボタンは真ん中に調整 */
+@media (max-width:767px) {
+  .link-button {
+    margin: 0 auto;
+    margin-bottom: 60px;
+  }
+}
+
+.link-button:hover {
+  opacity: 0.7;
+  background-color: #d4c45e;
+  color: white;
+}
+
+
+/* yasai-set
+---------------------------------------------------------------------------- */
+
+.yasaiset-wrapper {
+  /* background-color: deepskyblue; */
+  position: relative;
+}
+
+/* .yasaiset-image {
+  width: 635px;
+} */
+
+.yasaiset-image-box {
+  position: relative;
+  width: 635px;
+  /* background-color: darkviolet; */
+}
+
+@media (max-width:767px){
+  .yasaiset-image-box {
+    width: auto;
+ 
+  }
+}
+
+.yasaiset-image-bg {
+  width: 90%;
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  z-index: -1;
+}
+
+.yasaiset-wrapper h2 {
+  padding-left: 15%;
+}
+
+@media (max-width:767px){
+  .yasaiset-wrapper h2 {
+    padding-left: 0;
+    text-align: center;
+    /* background-color: turquoise; */
+  }
+}
+
+/* yasaiset,qa共通指定 */
+
+.flex-text-left {
+  /* background-color: khaki; */
+  width: 480px;
+}
+
+@media (max-width:767px) {
+  .flex-text-left {
+    /* background-color: violet; */
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+}
+
+/* 音符のあしらい */
+.yasaiset-w-hachibuonpu {
+  width: 2%;
+  position: absolute;
+  top: -10px;
+  right: 25%;
+  animation: bom 3s infinite; 
+}
+
+
+@keyframes bom {
+  0% {
+    transform: scale(1, 1);
+  }
+  2.5% {
+    transform: scale(1.3, 1.3);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  5% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+}
+
+
+
+@media (max-width:767px) {
+  .yasaiset-w-hachibuonpu {
+    width: 4%; 
+    top: 480px;
+    right: 15%;
+  }
+  
+}
+
+.yasaiset-hachibuonpu1 {
+  width: 2%;
+  position: absolute;
+  bottom: 10%;
+  left: 45%;
+  animation: look 3s 1s infinite both;
+}
+
+@keyframes look {
+  0% {
+    transform: translate(0, 0);
+  }
+  0.3% {
+    transform: translate(12px, -18px);
+  }
+  5% {
+    transform: translate(12px, -18px);
+  }
+  5.3% {
+    transform: translate(0, 0);
+  }
+}
+
+/*voice 
+---------------------------------------------------------------------------------  */
+
+.voice-wrapper {
+  /* background-color: goldenrod; */
+  position: relative;
+}
+
+.voice-wrapper h2 {
+  text-align: right;
+  padding-right: 25%;
+}
+
+/* sp用ト音記号あしらい準備 */
+.toonkigou-sp {
+    display: none;
+}
+
+@media (max-width:767px){
+  .voice-wrapper h2 {
+    padding-right: 0;
+    text-align: center;
+    /* background-color: turquoise; */
+  }
+
+  .toonkigou-sp {
+display: block;
+width:4%;
+position: absolute;
+top: -10px;
+left: 50px;
+transform: rotate(-30deg);
+  }
+}
+
+.voice-image-box {
+  padding-right:50px ;
+  position: relative;
+ 
+  /* background-color: gray; */
+}
+
+
+.voice-image {
+  position: relative;
+  width: 652px;
+  padding-top: 100px;
+}
+
+@media (max-width:767px) {
+  .voice-image {
+    padding-top: 0;
+  
+  }
+}
+
+/* sp用のためのイメージ画像準備。PCは非表示 */
+.voice-image-sp {
+  display: none;
+}
+
+.voice-image-bg {
+  position: absolute;
+  width: 80%;
+  top: 30px;
+  left: 50px;
+}
+
+.voice-image-dotbg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+}
+
+.voice-wrapper h2 {
+  margin-bottom: 100px;
+}
+
+.voice-flex-text {
+  /* background-color: crimson; */
+  width: 560px;
+  /* margin-left: 160px; */
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media (max-width:767px) {
+.voice-image {
+  display: none;
+}
+
+.voice-image-box {
+  padding-right: 0;
+}
+
+  .voice-image-sp {
+    display: block;
+    /* width: auto; */
+  }
+  .voice-wrapper h2 {
+    margin-bottom: 0;
+  }
+.voice-flex-text {
+    /* background-color: violet; */
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+  }
+}
+
+
+.oyako-illust {
+  position: absolute;
+  left: 0;
+  bottom: 60px;
+  width: 50%;
+}
+
+/* スマホでは親子イラスト非表示に */
+@media (max-width:767px) {
+  .oyako-illust {
+    display: none;
+  }
+}
+
+/* 以下３つはあしらい要素 */
+.voice-hachibuonpu {
+  width: 2%;
+  position: absolute;
+  top: 10px;
+  left: 25%;
+  transform: rotate(30deg);
+  animation: shiny 8s 1s infinite; 
+}
+
+@keyframes shiny {
+  0% {
+    opacity: 1;
+  }
+  38.4% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.2;
+  }
+  41.6% {
+    opacity: 1;
+  }
+  43.2% {
+    opacity: 0.2;
+  }
+  44.8% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+}
+
+.voice-nae {
+  width: 1.3%;
+  position: absolute;
+  bottom: 3%;
+  right: 15%;
+  animation: reflect 3s 2s infinite both; 
+}
+
+@keyframes reflect {
+  0% {
+    transform: translate(0, 0);
+  }
+  0.3% {
+    transform: scale(-1, 1);
+  }
+  5% {
+    transform: scale(-1, 1);
+  }
+  5.3% {
+    transform: translate(0, 0);
+  }
+}
+
+.voice-fukidashi {
+  width: 5%;
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  animation: trip 15s 0.3s steps(8, start) infinite both;
+}
+
+@keyframes trip {
+  0% {
+    transform: translate(100%, 0);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(100%, 0);
+  }
+}
+
+
+/* 上記ふきだしのあしらいが、画面幅が小さいと他要素とかぶるので調整 */
+@media (max-width:1300px) {
+  .voice-fukidashi {
+    right: 10%;
+  }
+
+}
+
+/* スマホでのあしらい調整 */
+@media (max-width:767px){
+
+  .voice-hachibuonpu {
+   display: none;
+  }
+  
+  .voice-nae {
+    width: 3%;
+    position: absolute;
+    bottom: 10px;
+    right: 15%;
+  }
+  
+  .voice-fukidashi {
+    display: none;
+  }
+
+}
+
+/* qa
+------------------------------------------------------------------------- */
+
+.qa-wrapper {
+  /* background-color: hotpink; */
+}
+
+.qa-image-box {
+  position: relative;
+  width: 630px;
+  /* background-color: lightcoral; */
+}
+
+@media (max-width:767px){
+  .qa-image-box {
+    width: auto;
+  }
+}
+
+/* .qa-image {
+  width: 630px;
+} */
+
+.qa-image-bg {
+  position: absolute;
+  width: 90%;
+  top: 50px;
+  right: -30px;
+  z-index: -1;
+}
+
+.qa-wrapper h2 {
+  padding-left: 25%;
+}
+
+@media (max-width:767px){
+  .qa-wrapper h2 {
+    padding-left: 0;
+    text-align: center;
+    /* background-color: turquoise; */
+  }
+}
+
+/* 見出し上の余白部分を微調整 */
+.qa-wrapper .midashi {
+  padding-top: 90px;
+}
+
+@media (max-width:767px) {
+ .qa-wrapper .midashi {
+  padding-top: 0;
+  }
+}
+
+/* contact
+--------------------------------------------------------- */
+
+.contact-wrapper {
+  /* background-color: lightseagreen; */
+  position: relative;
+  height: 750px;
+}
+
+.contact-wrapper h2 {
+  text-align: center;
+}
+
+.contact-image {
+  width: 294px;
+}
+
+.contact-text {
+  text-align: center;
+  /* background-color: papayawhip; */
+  padding: 60px 0;
+}
+
+.contact-image {
+  margin: 0 auto 100px;
+}
+
+.contact-wrapper .link-button {
+  margin: 0 auto;
+  /* background-color: teal; */
+}
+
+.pencil {
+  width: 3%;
+  position: absolute;
+  right: 35%;
+  bottom: 20%;
+  animation: twice 5s infinite both; 
+}
+
+
+.contact-nae1 {
+  width: 2%;
+  position: absolute;
+  left: 30%;
+  bottom: -10px;
+  animation: reflect 3s 2s infinite both; 
+}
+
+.contact-nae2 {
+  width: 1.5%;
+  position: absolute;
+  bottom: -15px;
+  left: 28%;
+  /* transform: rotate(-20deg); */
+  animation: reflect 3s 1s infinite both; 
+}
+
+@media (max-width:767px) {
+
+  .pencil {
+    width: 10%;
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+  }
+  
+  .contact-nae1 {
+  display: none;
+ 
+  }
+  
+  .contact-nae2 {
+ display: none;
+  }
+
+}
+
+/* footer
+--------------------------------------------------------------------------------- */
+
+footer {
+  position: relative;
+}
+
+.go-to-top {
+  display: block;
+}
+
+
+.go-to-top a:hover {
+  opacity: 0.7;
+}
+
+.go-to-top img {
+  width: 100px;
+  position: absolute;
+  top: -50px;
+  right: 10%;
+}
+
+@media (max-width:767px) {
+
+  /* 効いていない */
+  .go-to-top {
+    margin: auto;
+  }
+
+  .go-to-top img {
+    width: 80px;
+  }
+}
+
+.footer-bg {
+  background-image: url(../img/footer-ground.png);
+  width: 100%;
+  height: 185px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* 全体のcssアニメーション設定
+------------------------------------------------------------------ */
+
+/* 各ブロックの.image-boxがふわっと現れるアニメーション */
+
+.imageBox {
+  opacity: 0;
+}
+
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
