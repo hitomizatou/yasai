@@ -65,84 +65,102 @@ h2 {
 /* slick  sliderの記述 
 ----------------------------------------------------------------------------------------*/
 .slider {
-  position:relative;
-z-index: 1;
-/*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
-height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+  position: relative;
+  z-index: 1;
+  /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+  height: 100vh;
+  /*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
 }
+
 /*　背景画像設定　*/
 
 .slider-item01 {
-  background:url(../img/top-image.jpg);
+  background: url(../img/top-image.jpg);
 }
 
 .slider-item02 {
-  background:url(../img/top-image2.jpg);
+  background: url(../img/top-image2.jpg);
 }
 
 .slider-item03 {
-  background:url(../img/top-image3.jpg);
+  background: url(../img/top-image3.jpg);
 }
 
 .slider-item {
-  width: 100%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
-  height:100vh;/*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
-  background-repeat: no-repeat;/*背景画像をリピートしない*/
-  background-position: center;/*背景画像の位置を中央に*/
-  background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
+  width: 100%;
+  /*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+  height: 100vh;
+  /*各スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+  background-repeat: no-repeat;
+  /*背景画像をリピートしない*/
+  background-position: center;
+  /*背景画像の位置を中央に*/
+  background-size: cover;
+  /*背景画像が.slider-item全体を覆い表示*/
 }
 
 /*矢印の設定*/
 
-.slick-prev, 
+.slick-prev,
 .slick-next {
   position: absolute;
-z-index: 3;
+  z-index: 3;
   top: 42%;
-  cursor: pointer;/*マウスカーソルを指マークに*/
-  outline: none;/*クリックをしたら出てくる枠線を消す*/
-  border-top: 2px solid #fff;/*矢印の色*/
-  border-right: 2px solid #fff;/*矢印の色*/
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #fff;
+  /*矢印の色*/
+  border-right: 2px solid #fff;
+  /*矢印の色*/
   height: 25px;
   width: 25px;
 }
 
-.slick-prev {/*戻る矢印の位置と形状*/
-  left:2.5%;
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: 2.5%;
   transform: rotate(-135deg);
 }
 
-.slick-next {/*次へ矢印の位置と形状*/
-  right:2.5%;
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: 2.5%;
   transform: rotate(45deg);
 }
 
 /*ドットナビゲーションの設定*/
 
 .slick-dots {
-position: relative;
-z-index: 3;
-  text-align:center;
-margin:-50px 0 0 0;/*ドットの位置*/
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  margin: -50px 0 0 0;
+  /*ドットの位置*/
 }
 
 .slick-dots li {
-  display:inline-block;
-margin:0 5px;
+  display: inline-block;
+  margin: 0 5px;
 }
 
 .slick-dots button {
   color: transparent;
   outline: none;
-  width:8px;/*ドットボタンのサイズ*/
-  height:8px;/*ドットボタンのサイズ*/
-  display:block;
-  border-radius:50%;
-  background:#fff;/*ドットボタンの色*/
+  width: 8px;
+  /*ドットボタンのサイズ*/
+  height: 8px;
+  /*ドットボタンのサイズ*/
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  /*ドットボタンの色*/
 }
 
-.slick-dots .slick-active button{
-  background:#333;/*ドットボタンの現在地表示の色*/
+.slick-dots .slick-active button {
+  background: #333;
+  /*ドットボタンの現在地表示の色*/
 }
 
 /* slick設定　ここまで
@@ -153,9 +171,9 @@ header {
   position: relative;
 }
 
-.openbtn{
+.openbtn {
   width: 50px;
-  position:fixed;
+  position: fixed;
   top: 30px;
   left: 30px;
   z-index: 1;
@@ -171,6 +189,150 @@ header {
 }
 
 
+/* クリックしたらnavメニューが開く設定 */
+
+.closed-btn {
+  position: absolute;
+  z-index: 9999;
+  /*ボタンを最前面に*/
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+.closed-btn span {
+  display: inline-block;
+  position: absolute;
+  left: 30px;
+  height: 3px;
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+  transition: all .4s;
+}
+
+.closed-btn span:nth-of-type(1) {
+  top: 58px;
+  /* transform: translateY(6px) rotate(-45deg); */
+}
+
+.closed-btn span:nth-of-type(2) {
+  top: 70px;
+  /* transform: translateY(-6px) rotate(45deg); */
+}
+
+/* クリックして.activeが線がクロスして✖️ボタンに */
+.closed-btn.active span:nth-of-type(1) {
+  top: 58px;
+  transform: translateY(6px) rotate(-45deg);
+}
+
+.closed-btn.active span:nth-of-type(2) {
+  top: 70px;
+  transform: translateY(-6px) rotate(45deg);
+}
+
+
+#g-nav ul {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+nav ul li {
+  text-align: center;
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+nav ul li a {
+  display: inline-block;
+  color: #fff;
+}
+
+nav ul li a:hover {
+  color: rgb(216, 35, 35);
+}
+
+
+#g-nav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100vh;
+  background: #d4c45e;
+  transition: all 0.6s;
+}
+
+#g-nav.panelactive {
+  left: 0;
+}
+
+
+/* スクロールダウン */
+.scrolldown {
+  position: absolute;
+  right: 10%;
+  bottom: 20px;
+  animation: arrowmove 1s ease-in-out infinite;
+  z-index: 1;
+}
+
+
+@keyframes arrowmove {
+  0% {
+    bottom: 1%;
+  }
+
+  50% {
+    bottom: 3%;
+  }
+
+  100% {
+    bottom: 1%;
+  }
+}
+
+/* scrollテキスト */
+.scrolldown span {
+  position: absolute;
+  left: -20px;
+  bottom: 10px;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  writing-mode: vertical-rl;
+}
+
+/* 矢印の描写 */
+.scrolldown:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+  width: 1px;
+  height: 20px;
+  background-color: #fff;
+  transform: skewX(-31deg);
+}
+
+.scrolldown:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -10px;
+  /* 矢印 */
+  width: 1px;
+  height: 50px;
+  background: #fff;
+}
 
 
 /* 五線譜の位置調整 */
@@ -210,7 +372,7 @@ header h1 {
   .slider {
     height: 350px;
   }
-  
+
 }
 
 /* concept
@@ -259,13 +421,13 @@ header h1 {
 
   /* スマホ用のテキストレイアウト表示 */
   .concept-text-sp1,
-  .concept-text-sp2  {
+  .concept-text-sp2 {
     display: block;
     height: 250px;
     margin: 0 auto;
     /* background-color: teal; */
   }
- 
+
   /* PCで横並びしていたflexを解除 */
   .concept-textbox {
     display: block;
@@ -308,9 +470,11 @@ header h1 {
   0% {
     transform: rotate(0deg);
   }
+
   10% {
     transform: rotate(15deg);
   }
+
   20% {
     transform: rotate(0deg);
   }
@@ -328,27 +492,35 @@ header h1 {
   0% {
     transform: rotate(0) translate(0, 0);
   }
+
   4% {
     transform: rotate(0) translate(0, 0);
   }
+
   4.15% {
     transform: rotate(5deg) translate(10px, -20px);
   }
+
   8% {
     transform: rotate(5deg) translate(10px, -20px);
   }
+
   8.15% {
     transform: rotate(0) translate(0, 0);
   }
+
   12% {
     transform: rotate(0) translate(0, 0);
   }
+
   12.15% {
     transform: rotate(5deg) translate(10px, -20px);
   }
+
   16% {
     transform: rotate(5deg) translate(10px, -20px);
   }
+
   16.15% {
     transform: rotate(0) translate(0, 0);
   }
@@ -361,40 +533,47 @@ header h1 {
   left: 300px;
   animation: fuwa 5s 2s infinite both;
 }
+
 /* animation: fuwa 5s 2s infinite both; */
 @keyframes fuwa {
   0% {
     transform: translate(0, 0);
   }
+
   25% {
     transform: translate(-2px, -10px);
   }
+
   50% {
     transform: translate(-1px, 0);
   }
+
   75% {
     transform: translate(1px, -7px);
   }
+
   100% {
     transform: translate(0, 0);
   }
 }
 
 @media(max-width:767px) {
-  .concept-hachibuonpu ,
+
+  .concept-hachibuonpu,
   .moyamoya {
     display: none;
   }
 
- .toonkigou {
-  width: 7%;
-  position: absolute;
-  bottom: -480px;
-  right: 50px;
-  z-index: 10;
- }
-
+  .toonkigou {
+    width: 7%;
+    position: absolute;
+    bottom: -480px;
+    right: 50px;
+    z-index: 10;
   }
+
+}
+
 /* about
 ----------------------------------------------------------------------- */
 
@@ -410,7 +589,7 @@ header h1 {
 }
 
 /* スマホでは真ん中にレイアウト */
-@media (max-width:767px){
+@media (max-width:767px) {
   .about-wrapper h2 {
     /* padding-left: 0; */
     padding-right: 0;
@@ -451,7 +630,7 @@ header h1 {
 }
 
 /*  yasaisetとqa部分をrow-reverseに */
-section:nth-of-type(odd) .flex-container{
+section:nth-of-type(odd) .flex-container {
   flex-direction: row-reverse;
   padding-top: 135px;
   /* background-color: rgb(221, 239, 182); */
@@ -460,31 +639,31 @@ section:nth-of-type(odd) .flex-container{
 
 
 @media (max-width:767px) {
-.flex-container{
-  /* section:nth-of-type(odd) */
-  display: block;
+  .flex-container {
+    /* section:nth-of-type(odd) */
+    display: block;
     /* flex-direction: column !important; */
     padding-top: 45px;
   }
 
   /*  yasaisetとqa部分をpaddingを調整 */
-  section:nth-of-type(odd) .flex-container{
+  section:nth-of-type(odd) .flex-container {
     padding-top: 35px;
     /* background-color: rgb(221, 239, 182); */
   }
 
   /* スマホ用のイメージ写真表示 */
- .about-image-sp {
-   display: block;
-   width: 100%;
- }
+  .about-image-sp {
+    display: block;
+    width: 100%;
+  }
 
- /* PC用のイメージ写真非表示 */
- .about-image {
-   display: none;
- }
+  /* PC用のイメージ写真非表示 */
+  .about-image {
+    display: none;
+  }
 
- /* スマホでは、イメージ写真のうしろのあしらいは非表示に */
+  /* スマホでは、イメージ写真のうしろのあしらいは非表示に */
   .about-image-bg, .yasaiset-image-bg, .voice-image-bg, .voice-image-dotbg, .qa-image-bg {
     display: none;
   }
@@ -533,7 +712,7 @@ section:nth-of-type(odd) .flex-container{
 
 @media (max-width:767px) {
   .text {
-  padding-bottom: 50px;
+    padding-bottom: 50px;
   }
 }
 
@@ -586,10 +765,10 @@ section:nth-of-type(odd) .flex-container{
   /* background-color: darkviolet; */
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
   .yasaiset-image-box {
     width: auto;
- 
+
   }
 }
 
@@ -605,7 +784,7 @@ section:nth-of-type(odd) .flex-container{
   padding-left: 15%;
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
   .yasaiset-wrapper h2 {
     padding-left: 0;
     text-align: center;
@@ -635,7 +814,7 @@ section:nth-of-type(odd) .flex-container{
   position: absolute;
   top: -10px;
   right: 25%;
-  animation: bom 3s infinite; 
+  animation: bom 3s infinite;
 }
 
 
@@ -643,13 +822,16 @@ section:nth-of-type(odd) .flex-container{
   0% {
     transform: scale(1, 1);
   }
+
   2.5% {
     transform: scale(1.3, 1.3);
     animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
+
   5% {
     transform: scale(1, 1);
   }
+
   50% {
     transform: scale(1, 1);
   }
@@ -659,11 +841,11 @@ section:nth-of-type(odd) .flex-container{
 
 @media (max-width:767px) {
   .yasaiset-w-hachibuonpu {
-    width: 4%; 
+    width: 4%;
     top: 480px;
     right: 15%;
   }
-  
+
 }
 
 .yasaiset-hachibuonpu1 {
@@ -678,12 +860,15 @@ section:nth-of-type(odd) .flex-container{
   0% {
     transform: translate(0, 0);
   }
+
   0.3% {
     transform: translate(12px, -18px);
   }
+
   5% {
     transform: translate(12px, -18px);
   }
+
   5.3% {
     transform: translate(0, 0);
   }
@@ -704,10 +889,10 @@ section:nth-of-type(odd) .flex-container{
 
 /* sp用ト音記号あしらい準備 */
 .toonkigou-sp {
-    display: none;
+  display: none;
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
   .voice-wrapper h2 {
     padding-right: 0;
     text-align: center;
@@ -715,19 +900,19 @@ section:nth-of-type(odd) .flex-container{
   }
 
   .toonkigou-sp {
-display: block;
-width:4%;
-position: absolute;
-top: -10px;
-left: 50px;
-transform: rotate(-30deg);
+    display: block;
+    width: 4%;
+    position: absolute;
+    top: -10px;
+    left: 50px;
+    transform: rotate(-30deg);
   }
 }
 
 .voice-image-box {
-  padding-right:50px ;
+  padding-right: 50px;
   position: relative;
- 
+
   /* background-color: gray; */
 }
 
@@ -741,7 +926,7 @@ transform: rotate(-30deg);
 @media (max-width:767px) {
   .voice-image {
     padding-top: 0;
-  
+
   }
 }
 
@@ -779,22 +964,24 @@ transform: rotate(-30deg);
 }
 
 @media (max-width:767px) {
-.voice-image {
-  display: none;
-}
+  .voice-image {
+    display: none;
+  }
 
-.voice-image-box {
-  padding-right: 0;
-}
+  .voice-image-box {
+    padding-right: 0;
+  }
 
   .voice-image-sp {
     display: block;
     /* width: auto; */
   }
+
   .voice-wrapper h2 {
     margin-bottom: 0;
   }
-.voice-flex-text {
+
+  .voice-flex-text {
     /* background-color: violet; */
     width: 100%;
     margin: 0 auto;
@@ -824,28 +1011,34 @@ transform: rotate(-30deg);
   top: 10px;
   left: 25%;
   transform: rotate(30deg);
-  animation: shiny 8s 1s infinite; 
+  animation: shiny 8s 1s infinite;
 }
 
 @keyframes shiny {
   0% {
     opacity: 1;
   }
+
   38.4% {
     opacity: 1;
   }
+
   40% {
     opacity: 0.2;
   }
+
   41.6% {
     opacity: 1;
   }
+
   43.2% {
     opacity: 0.2;
   }
+
   44.8% {
     opacity: 1;
   }
+
   80% {
     opacity: 1;
   }
@@ -856,19 +1049,22 @@ transform: rotate(-30deg);
   position: absolute;
   bottom: 3%;
   right: 15%;
-  animation: reflect 3s 2s infinite both; 
+  animation: reflect 3s 2s infinite both;
 }
 
 @keyframes reflect {
   0% {
     transform: translate(0, 0);
   }
+
   0.3% {
     transform: scale(-1, 1);
   }
+
   5% {
     transform: scale(-1, 1);
   }
+
   5.3% {
     transform: translate(0, 0);
   }
@@ -886,9 +1082,11 @@ transform: rotate(-30deg);
   0% {
     transform: translate(100%, 0);
   }
+
   50% {
     transform: translate(0, 0);
   }
+
   100% {
     transform: translate(100%, 0);
   }
@@ -904,19 +1102,19 @@ transform: rotate(-30deg);
 }
 
 /* スマホでのあしらい調整 */
-@media (max-width:767px){
+@media (max-width:767px) {
 
   .voice-hachibuonpu {
-   display: none;
+    display: none;
   }
-  
+
   .voice-nae {
     width: 3%;
     position: absolute;
     bottom: 10px;
     right: 15%;
   }
-  
+
   .voice-fukidashi {
     display: none;
   }
@@ -936,7 +1134,7 @@ transform: rotate(-30deg);
   /* background-color: lightcoral; */
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
   .qa-image-box {
     width: auto;
   }
@@ -958,7 +1156,7 @@ transform: rotate(-30deg);
   padding-left: 25%;
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
   .qa-wrapper h2 {
     padding-left: 0;
     text-align: center;
@@ -972,8 +1170,8 @@ transform: rotate(-30deg);
 }
 
 @media (max-width:767px) {
- .qa-wrapper .midashi {
-  padding-top: 0;
+  .qa-wrapper .midashi {
+    padding-top: 0;
   }
 }
 
@@ -1014,7 +1212,7 @@ transform: rotate(-30deg);
   position: absolute;
   right: 35%;
   bottom: 20%;
-  animation: twice 5s infinite both; 
+  animation: twice 5s infinite both;
 }
 
 
@@ -1023,7 +1221,7 @@ transform: rotate(-30deg);
   position: absolute;
   left: 30%;
   bottom: -10px;
-  animation: reflect 3s 2s infinite both; 
+  animation: reflect 3s 2s infinite both;
 }
 
 .contact-nae2 {
@@ -1032,7 +1230,7 @@ transform: rotate(-30deg);
   bottom: -15px;
   left: 28%;
   /* transform: rotate(-20deg); */
-  animation: reflect 3s 1s infinite both; 
+  animation: reflect 3s 1s infinite both;
 }
 
 @media (max-width:767px) {
@@ -1043,14 +1241,14 @@ transform: rotate(-30deg);
     right: 5%;
     bottom: 20%;
   }
-  
+
   .contact-nae1 {
-  display: none;
- 
+    display: none;
+
   }
-  
+
   .contact-nae2 {
- display: none;
+    display: none;
   }
 
 }
